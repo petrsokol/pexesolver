@@ -8,7 +8,7 @@
 int main() {
     std::cout << "DOBRY DEN!!!" << std::endl;
 
-    std::unordered_set<int> usedTiles = {};
+    std::bitset<24> usedTiles = {};
     std::vector<Tile> tiles = {
             Tile("sachy", 0b10011001, 1), // sachy
             Tile("tester", 0b10011001, 1), // tester
@@ -39,7 +39,7 @@ int main() {
             Tile("stromPulnoc", 0b11110011, 3), // strom pulnoc
     };
 
-    Board board(4,4);
+    Board board(4,5);
     board.fill(0, 0, tiles, usedTiles);
 
     return 0;

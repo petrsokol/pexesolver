@@ -18,6 +18,8 @@ private:
     std::vector<std::vector<Tile>> grid; // 2D vector to store the tiles
     int rows, cols;
     int reps;
+    int epsilon = 4;
+    const Tile defaultTile = Tile();
 
 public:
     // Constructor to initialize the board with blank tiles
@@ -25,7 +27,7 @@ public:
         grid = std::vector<std::vector<Tile>>(rows, std::vector<Tile>(cols, Tile()));
     }
 
-    bool fill(int rStart, int cStart, std::vector<Tile> tiles, std::unordered_set<int> usedTiles) {
+    bool fill(int rStart, int cStart, std::vector<Tile>& tiles, std::bitset<24>& usedTiles) {
         auto [r, c] = nextEmptyPos(rStart, cStart);
         reps++;
 
@@ -40,13 +42,9 @@ public:
             showGrid();
         }
 
-//        if (grid[rows - 1][cols - 3].name != "default") {
-//            showGrid();
-//        }
-
         for (int digit = 0; digit < tiles.size(); ++digit) {
 //            std::cout << "currently trying: " << tiles.at(digit).name << ": ";
-            if (usedTiles.contains(digit)) {
+            if (usedTiles.test(digit)) {
 //                std::cout << "tile " << tiles.at(digit).name << " is already placed somewhere" << std::endl;
                 continue;
             }
@@ -56,16 +54,16 @@ public:
                 if (canBePlaced(r, c, candidate)) {
                     grid[r][c] = candidate;
 //                    std::cout << "PLACED " << candidate.name << " with orientation " << candidate.orientation << " at [" << r << ", " << c << "]" << std::endl << std::endl;
-                    usedTiles.insert(digit);
+                    usedTiles.set(digit);
                     if (fill(r, c, tiles, usedTiles)) {
                         return true;
                     }
-                    usedTiles.erase(digit);
+                    usedTiles.reset(digit);
                 }
                 candidate.rotate();
             }
         }
-        grid[r][c] = Tile();
+        grid[r][c] = defaultTile;
         return false;
 
     }
