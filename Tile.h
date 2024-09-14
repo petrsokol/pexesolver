@@ -17,10 +17,10 @@ public:
 
     std::string name;
     int sides;
-    int max_orientation;
-    int orientation = 0;
+    int totalRotations;
+    int rotation = 0;
 
-    Tile(std::string name, int sides, int max_orientation);
+    Tile(std::string name, int sides, int totalRotations);
 
     [[nodiscard]] int north() const;
     [[nodiscard]] int invertedNorth() const;
@@ -31,7 +31,6 @@ public:
 
     void rotate();
     void toString() const;
-
 };
 
 

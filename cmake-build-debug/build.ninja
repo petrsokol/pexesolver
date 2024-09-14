@@ -61,20 +61,8 @@ build CMakeFiles/pexesok.dir/Tile.cpp.obj: CXX_COMPILER__pexesok_unscanned_Debug
   OBJECT_DIR = CMakeFiles\pexesok.dir
   OBJECT_FILE_DIR = CMakeFiles\pexesok.dir
 
-build CMakeFiles/pexesok.dir/Solver.cpp.obj: CXX_COMPILER__pexesok_unscanned_Debug C$:/cpp/pexesok/Solver.cpp || cmake_object_order_depends_target_pexesok
-  DEP_FILE = CMakeFiles\pexesok.dir\Solver.cpp.obj.d
-  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles\pexesok.dir
-  OBJECT_FILE_DIR = CMakeFiles\pexesok.dir
-
 build CMakeFiles/pexesok.dir/Board.cpp.obj: CXX_COMPILER__pexesok_unscanned_Debug C$:/cpp/pexesok/Board.cpp || cmake_object_order_depends_target_pexesok
   DEP_FILE = CMakeFiles\pexesok.dir\Board.cpp.obj.d
-  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles\pexesok.dir
-  OBJECT_FILE_DIR = CMakeFiles\pexesok.dir
-
-build CMakeFiles/pexesok.dir/Def.cpp.obj: CXX_COMPILER__pexesok_unscanned_Debug C$:/cpp/pexesok/Def.cpp || cmake_object_order_depends_target_pexesok
-  DEP_FILE = CMakeFiles\pexesok.dir\Def.cpp.obj.d
   FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\pexesok.dir
   OBJECT_FILE_DIR = CMakeFiles\pexesok.dir
@@ -87,7 +75,7 @@ build CMakeFiles/pexesok.dir/Def.cpp.obj: CXX_COMPILER__pexesok_unscanned_Debug 
 #############################################
 # Link the executable pexesok.exe
 
-build pexesok.exe: CXX_EXECUTABLE_LINKER__pexesok_Debug CMakeFiles/pexesok.dir/main.cpp.obj CMakeFiles/pexesok.dir/Tile.cpp.obj CMakeFiles/pexesok.dir/Solver.cpp.obj CMakeFiles/pexesok.dir/Board.cpp.obj CMakeFiles/pexesok.dir/Def.cpp.obj
+build pexesok.exe: CXX_EXECUTABLE_LINKER__pexesok_Debug CMakeFiles/pexesok.dir/main.cpp.obj CMakeFiles/pexesok.dir/Tile.cpp.obj CMakeFiles/pexesok.dir/Board.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\pexesok.dir

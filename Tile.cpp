@@ -6,22 +6,22 @@
 #include <utility>
 #include "Tile.h"
 
-Tile::Tile(std::string name, int sides, int max_orientation) {
+Tile::Tile(std::string name, int sides, int totalRotations) {
     Tile::name = std::move(name);
     Tile::sides = sides;
-    Tile::orientation = 0;
-    Tile::max_orientation = max_orientation;
+    Tile::rotation = 0;
+    Tile::totalRotations = totalRotations;
 }
 
-Tile::Tile() : Tile("default", 0b00110011, 3) {}
+Tile::Tile() : Tile("default", 0b00000000, 1) {}
 
 void Tile::rotate() {
-    orientation++;
+    rotation++;
     sides = (sides >> 2) | (sides << (8-2));
 }
 
 void Tile::toString() const {
-    std::cout << "name: " << name << ", orientation: " << orientation << ", sides: " << std::bitset<8>(sides) << std::endl;
+    std::cout << "name: " << name << ", rotation: " << rotation << ", sides: " << std::bitset<8>(sides) << std::endl;
 }
 
 int Tile::north() const {
@@ -47,3 +47,4 @@ int Tile::invertedWest() const {
 int Tile::invertedNorth() const {
     return ((sides & 0b01000000) >> 5) | ((sides & 0b10000000) >> 7);
 }
+
