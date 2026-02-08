@@ -12,6 +12,6 @@ The name is a play on words pexeso (the Czech name for the memory game, the orig
 
 The algorithm is recursive in its nature. It mimics an algorithm used to efficiently and quickly solve sudokus. Since the tiles are black and white, the program can be made extremely efficient using bitmaps and bitshifts, only working with boolean values. 
 
-In every recursion step, the program tries to place a tile at the next available spot and checks if its edges match with its neighbors. If not, it rotates the tile by 90° and checks again. If the tile does not match at all, it tries the next from the que. When it exhausts all option, the recursion branch ends and reverts to a previous position, making a similar choice, until it either finds a solution or checks every option. 
+In every recursion step, the program tries to place a tile at the next available spot and checks if its edges match with its neighbors. If not, it rotates the tile by 90° and checks again. If the tile does not match at all, it tries the next from the que. When it exhausts all options, the recursion branch ends and reverts to a previous position, making a similar choice, until it either finds a solution or checks every option. 
 
 ## How to run it yourself
