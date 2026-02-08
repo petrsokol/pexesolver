@@ -6,6 +6,8 @@ You can also define the desired superstructure - for the example of 24 different
 
 For a set of tiles where this solution does not exist, you can also toggle an option to show partial solutions (with only one or two tiles missing)
 
+The name is a play on words pexeso (the Czech name for the memory game, the original idea behind this project), and solver, since it finds an arrangement fulfilling the defined ruleset.
+
 ## How the algorithm works
 
 The algorithm is recursive in its nature. It mimics an algorithm used to efficiently and quickly solve sudokus. Since the tiles are black and white, the program can be made extremely efficient using bitmaps and bitshifts, only working with boolean values. 
